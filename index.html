@@ -5,177 +5,286 @@
     <title>Tran Bao Khoa Le (Nicolas Le) – Portfolio</title>
     <style>
         body { 
-            font-family: Arial, sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             max-width: 900px; 
             margin: auto; 
-            padding: 20px; 
-            background: #f5f5f5; 
+            padding: 30px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
         }
-        h1 { text-align: center; margin-bottom: 30px; }
-        h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-top: 30px;
+        }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 10px;
+            color: white;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        h2 { 
+            border-bottom: 3px solid #764ba2; 
+            padding-bottom: 10px; 
+            color: #333;
+            margin-top: 40px;
+        }
         .project { 
-            background: #fff; 
-            padding: 20px; 
-            margin: 20px 0; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #f8f9fa; 
+            padding: 25px; 
+            margin: 25px 0; 
+            border-radius: 12px; 
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        ul { margin-top: 5px; }
-        code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .project h3 {
+            color: #333;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emoji {
+            font-size: 1.4em;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s;
+        }
+        .feature:hover {
+            border-color: #667eea;
+            background: #f0f3ff;
+        }
+        .feature strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .project-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .project-link:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .contact a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
 
-<h1>Tran Bao Khoa Le (Nicolas Le) – Computer Science Portfolio</h1>
+<h1>Tran Bao Khoa Le (Nicolas Le)</h1>
+<div class="subtitle">Computer Science & AI Portfolio</div>
 
-<h2>Projects</h2>
+<div class="container">
 
-<!-- Tic Tac Toe AI Game - ADD THIS NEW PROJECT -->
-<div class="project">
-    <h3>Tic-Tac-Toe AI Game 🤖</h3>
-    <p>
-        A feature-rich Tic-Tac-Toe game built with <strong>Python + PyGame</strong> featuring intelligent AI opponents,
-        smooth animations, and an engaging user interface. Demonstrates game development, AI algorithms, and interactive design.
-    </p>
-    <p>
-        <strong>Features:</strong>
+    <h2>🎯 Featured Projects</h2>
+
+    <!-- Tic Tac Toe AI Game -->
+    <div class="project">
+        <h3><span class="emoji">🎮</span> Tic-Tac-Toe AI Game</h3>
+        <p><strong>Interactive Python game with intelligent AI opponent and animations</strong></p>
+        
+        <div class="feature-grid">
+            <div class="feature">
+                <strong>🤖 Smart AI</strong>
+                Three difficulty levels with Minimax algorithm
+            </div>
+            <div class="feature">
+                <strong>🎨 Visual Effects</strong>
+                Smooth animations, particles, and hover effects
+            </div>
+            <div class="feature">
+                <strong>⏱️ Timer Modes</strong>
+                Speed challenges (3s to 15s per move)
+            </div>
+            <div class="feature">
+                <strong>🏆 Achievements</strong>
+                9 unlockable goals with notifications
+            </div>
+        </div>
+        
+        <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PyGame</span>
+            <span class="tech-tag">Minimax AI</span>
+            <span class="tech-tag">Game Dev</span>
+            <span class="tech-tag">Animations</span>
+        </div>
+        
+        <p><strong>Highlights:</strong> Unbeatable AI algorithm • Smooth 60 FPS animations • Sound effects • Real-time statistics</p>
+        
+        <a href="https://github.com/nicolasletran/tic_tac_toe_ai" class="project-link" target="_blank">View Project →</a>
+    </div>
+
+    <!-- Smart Resume Analyzer -->
+    <div class="project">
+        <h3><span class="emoji">📄</span> Smart Resume Analyzer</h3>
+        <p><strong>AI-powered tool to match resumes with job descriptions</strong></p>
+        
+        <div class="feature-grid">
+            <div class="feature">
+                <strong>🧠 AI Analysis</strong>
+                Semantic similarity scoring
+            </div>
+            <div class="feature">
+                <strong>📊 Skill Matching</strong>
+                Radar charts and gap analysis
+            </div>
+            <div class="feature">
+                <strong>💡 Recommendations</strong>
+                Actionable improvement tips
+            </div>
+            <div class="feature">
+                <strong>📈 PDF Reports</strong>
+                Professional summary generation
+            </div>
+        </div>
+        
+        <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">AI Analysis</span>
+            <span class="tech-tag">Web App</span>
+        </div>
+        
+        <p><strong>Highlights:</strong> Live skill matching • Interactive visualizations • Learning resource suggestions</p>
+        
+        <a href="https://github.com/nicolasletran/Smart-Resume-Analyzer" class="project-link" target="_blank">View Project →</a>
+    </div>
+
+    <!-- System Projects Grid -->
+    <h2>⚙️ System & CLI Projects</h2>
+    
+    <div class="project">
+        <h3><span class="emoji">💻</span> Mini Unix Shell</h3>
+        <p><strong>C-based shell with process management and piping</strong></p>
         <ul>
-            <li><strong>Three AI difficulty levels</strong>: Easy (random), Medium (strategic blocking), Hard (unbeatable Minimax algorithm)</li>
-            <li><strong>Smooth animations</strong>: Piece placement animations, win line effects, and confetti particle systems</li>
-            <li><strong>Timer modes</strong>: Relaxed (15s), Normal (5s), Speed (3s) for added challenge</li>
-            <li><strong>Interactive UI</strong>: Hover previews, move highlighting, and visual feedback</li>
-            <li><strong>Sound effects</strong>: Move sounds, win/lose sounds, button clicks, and timer warnings</li>
-            <li><strong>Achievement system</strong>: 9 unlockable achievements with notification system</li>
-            <li><strong>Undo functionality</strong>: Single-click undo removes both player and AI moves</li>
-            <li><strong>Real-time statistics</strong>: Move counter with player/AI breakdown and visual progress bar</li>
+            <li>Pipeline execution with <code>|</code> operator</li>
+            <li>Background jobs and signal handling</li>
+            <li>Built-in commands and I/O redirection</li>
+            <li>Process control and memory management</li>
         </ul>
-    </p>
-    <p>
-        <strong>Technical Implementation:</strong>
+        <div class="tech-tags">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">System Programming</span>
+            <span class="tech-tag">Process Management</span>
+        </div>
+        <a href="https://github.com/nicolasletran/Mini-Unix-Shell" class="project-link" target="_blank">View Project →</a>
+    </div>
+
+    <div class="project">
+        <h3><span class="emoji">📁</span> CLI File Manager</h3>
+        <p><strong>Cross-platform file system explorer in C</strong></p>
         <ul>
-            <li>Implemented <code>Minimax algorithm</code> with alpha-beta pruning for optimal AI decision-making</li>
-            <li>Designed modular architecture with separate modules for AI, GUI, game logic, and sound management</li>
-            <li>Created custom animation system using PyGame's Surface and alpha blending for smooth transitions</li>
-            <li>Implemented event-driven architecture with 60 FPS game loop and proper state management</li>
-            <li>Developed achievement tracking system with JSON serialization for persistent data</li>
+            <li>Complete file operations (copy, move, delete)</li>
+            <li>Recursive search and directory navigation</li>
+            <li>Color-coded output with detailed views</li>
+            <li>Custom commands and error handling</li>
         </ul>
-    </p>
-    <p>
-        Demonstrates comprehensive software engineering skills including game development, AI algorithms, 
-        user interface design, and real-time rendering.
-    </p>
-    <p>
-        <a href="https://github.com/nicolasletran/tic_tac_toe_ai" target="_blank">View on GitHub</a>
-    </p>
+        <div class="tech-tags">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">File Systems</span>
+            <span class="tech-tag">CLI Tools</span>
+            <span class="tech-tag">Cross-platform</span>
+        </div>
+        <a href="https://github.com/nicolasletran/File-Manager-C" class="project-link" target="_blank">View Project →</a>
+    </div>
+
+    <div class="project">
+        <h3><span class="emoji">🍎</span> Calories Intake Tracker</h3>
+        <p><strong>Python CLI app for nutrition tracking</strong></p>
+        <ul>
+            <li>Personalized protein goal calculation</li>
+            <li>Weekly summaries with visual feedback</li>
+            <li>JSON data persistence</li>
+            <li>Meal editing and history tracking</li>
+        </ul>
+        <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Data Analysis</span>
+            <span class="tech-tag">CLI</span>
+            <span class="tech-tag">JSON</span>
+        </div>
+        <a href="https://github.com/nicolasletran/Calories-Expense-Tracker.git" class="project-link" target="_blank">View Project →</a>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h3>📬 Let's Connect</h3>
+        <p><strong>Email:</strong> khoale0501@gmail.com</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/nicolasletran" target="_blank">github.com/nicolasletran</a></p>
+        <p>Open to internships, research opportunities, and collaborative projects</p>
+    </div>
+
 </div>
-
-<!-- Smart Resume Analyzer -->
-<div class="project">
-    <h3>Smart Resume Analyzer 🚀</h3>
-    <p>
-        A Python + Streamlit web app that analyzes your resume against a job description.
-        Uses AI-powered semantic text similarity and skill extraction to provide actionable insights.
-    </p>
-    <p>
-        <strong>Features:</strong>
-        <ul>
-            <li>Compute <strong>text similarity</strong> between resume and job description</li>
-            <li>Calculate <strong>skill match score</strong> and final match score with verdict (Low / Moderate / High)</li>
-            <li>Identify <strong>missing skills</strong> with clickable learning resources</li>
-            <li>Interactive <strong>radar chart</strong> showing skill coverage</li>
-            <li>Provide <strong>resume improvement suggestions</strong></li>
-            <li>Generate a <strong>PDF report</strong> summarizing analysis</li>
-            <li>Clean and user-friendly <strong>Streamlit UI</strong></li>
-        </ul>
-    </p>
-    <p>
-        Built to demonstrate Python programming, NLP, AI-based text analysis, and web app development.
-    </p>
-    <p>
-        <a href="https://github.com/nicolasletran/Smart-Resume-Analyzer" target="_blank">View on GitHub</a>
-    </p>
-</div>
-
-<!-- Mini Unix Shell -->
-<div class="project">
-    <h3>Mini Unix Shell</h3>
-    <p>
-        A Unix-like shell implemented in <strong>C</strong> with support for:
-        <ul>
-            <li>Pipes (<code>|</code>)</li>
-            <li>Background jobs (<code>&</code>)</li>
-            <li>Output redirection (<code>></code>)</li>
-            <li>Built-in commands (<code>cd</code>, <code>exit</code>)</li>
-            <li>Ctrl+C handling for foreground processes</li>
-        </ul>
-    </p>
-    <p>
-        Demonstrates system programming, process management, and inter-process communication.
-    </p>
-    <p>
-        <a href="https://github.com/nicolasletran/Mini-Unix-Shell" target="_blank">View on GitHub</a>
-    </p>
-</div>
-
-<!-- Calories Tracker -->
-<div class="project">
-    <h3>Calories Intake Tracker</h3>
-    <p>
-        A Python command-line application for tracking daily meals, calories, and protein intake.
-        Provides daily and weekly summaries and checks whether the user meets a personalized protein goal based on body weight.
-    </p>
-    <p>
-        <strong>Features:</strong>
-        <ul>
-            <li>Add meals with food name, calories, protein, and category</li>
-            <li>View today's summary and last 7 days summary</li>
-            <li>Edit or delete meals from any date</li>
-            <li>Personalized protein goal with visual feedback ✅ / ⚠️</li>
-            <li>Data stored locally using JSON</li>
-        </ul>
-    </p>
-    <p>
-        Demonstrates data handling, control flow, and clean program structure in Python.
-    </p>
-    <p>
-        <a href="https://github.com/nicolasletran/Calories-Expense-Tracker.git" target="_blank">View on GitHub</a>
-    </p>
-</div>
-
-<!-- CLI File Manager -->
-<div class="project">
-    <h3>CLI File Manager</h3>
-    <p>
-        A Command-Line Interface (CLI) File Manager implemented in <strong>C</strong>.  
-        Allows users to interact with the file system using commands similar to Unix shell.
-    </p>
-    <p>
-        <strong>Features:</strong>
-        <ul>
-            <li>List files and directories (<code>ls</code>, <code>ls -l</code>)</li>
-            <li>Create / Delete files (<code>touch</code>, <code>rm</code>)</li>
-            <li>Create / Delete directories (<code>mkdir</code>, <code>rmdir</code>)</li>
-            <li>Copy / Move files (<code>cp</code>, <code>mv</code>)</li>
-            <li>Recursive file search (<code>find</code>)</li>
-            <li>Navigation: <code>cd</code> and <code>pwd</code></li>
-            <li>Color-coded directories and optional detailed listing</li>
-        </ul>
-    </p>
-    <p>
-        Demonstrates file system manipulation, recursion, and cross-platform C programming.
-    </p>
-    <p>
-        <a href="https://github.com/nicolasletran/File-Manager-C" target="_blank">View on GitHub</a>
-    </p>
-</div>
-
-<h2>Contact</h2>
-<p>
-    <strong>Email:</strong> khoale0501@gmail.com <br>
-    <strong>GitHub:</strong> <a href="https://github.com/nicolasletran" target="_blank">https://github.com/nicolasletran</a>
-</p>
 
 </body>
 </html>

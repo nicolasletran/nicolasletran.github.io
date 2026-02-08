@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+    <title>Khoa Le | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -136,6 +136,7 @@
             text-decoration: none;
             border: 2px solid var(--border);
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .nav-tab:hover,
@@ -361,6 +362,15 @@
             background: rgba(37, 99, 235, 0.02);
         }
 
+        /* Demo Links Notice */
+        .demo-notice {
+            text-align: center;
+            color: var(--text-light);
+            margin-top: -40px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -483,17 +493,17 @@
                 <div class="profile-img">
                     <i class="fas fa-code"></i>
                 </div>
-                <h1>Your Name</h1>
+                <h1>Khoa Le</h1>
                 <div class="title">Full-Stack Developer & Software Engineer</div>
                 <p class="bio">
                     I build elegant, high-performance applications with clean architecture and exceptional user experiences. 
                     Passionate about solving complex problems through well-crafted code and innovative solutions.
                 </p>
                 <div class="social-links">
-                    <a href="mailto:your.email@example.com" aria-label="Email">
+                    <a href="mailto:khoale0501@gmail.com" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank">
+                    <a href="https://github.com/nicolasletran" aria-label="GitHub" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://linkedin.com/in/yourusername" aria-label="LinkedIn" target="_blank">
@@ -507,11 +517,17 @@
     <!-- Navigation -->
     <div class="container">
         <div class="nav-tabs">
-            <a href="#web" class="nav-tab active">Web Projects</a>
-            <a href="#games" class="nav-tab">Games & AI</a>
-            <a href="#systems" class="nav-tab">Systems Programming</a>
-            <a href="#tools" class="nav-tab">Tools & Utilities</a>
+            <div class="nav-tab active" data-filter="all">All Projects</div>
+            <div class="nav-tab" data-filter="web">Web Projects</div>
+            <div class="nav-tab" data-filter="games">Games & AI</div>
+            <div class="nav-tab" data-filter="systems">Systems Programming</div>
+            <div class="nav-tab" data-filter="tools">Tools & Utilities</div>
         </div>
+    </div>
+
+    <!-- Demo Links Notice -->
+    <div class="container demo-notice">
+        <p>Click "View Code" to explore the GitHub repository for each project. Live demos available upon request.</p>
     </div>
 
     <!-- Projects Section -->
@@ -565,7 +581,7 @@
                         <a href="YOUR_DEMO_LINK" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
-                        <a href="YOUR_GITHUB_LINK" class="project-link code" target="_blank">
+                        <a href="https://github.com/nicolasletran/Tien_Len_Card_Game" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
@@ -618,7 +634,7 @@
                         <a href="#" class="project-link demo">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
-                        <a href="#" class="project-link code">
+                        <a href="https://github.com/nicolasletran/Smart-Resume-Analyzer" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
@@ -669,7 +685,7 @@
                         <a href="#" class="project-link demo">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
-                        <a href="#" class="project-link code">
+                        <a href="https://github.com/nicolasletran/tic_tac_toe_ai" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
@@ -721,7 +737,7 @@
                         <a href="#" class="project-link demo">
                             <i class="fas fa-external-link-alt"></i> View Demo
                         </a>
-                        <a href="#" class="project-link code">
+                        <a href="https://github.com/nicolasletran/Mini-Unix-Shell" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
@@ -772,7 +788,7 @@
                         <a href="#" class="project-link demo">
                             <i class="fas fa-external-link-alt"></i> View Demo
                         </a>
-                        <a href="#" class="project-link code">
+                        <a href="https://github.com/nicolasletran/File-Manager-C" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
@@ -823,7 +839,7 @@
                         <a href="#" class="project-link demo">
                             <i class="fas fa-external-link-alt"></i> View Demo
                         </a>
-                        <a href="#" class="project-link code">
+                        <a href="https://github.com/nicolasletran/Calories-Expense-Tracker" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
@@ -840,13 +856,13 @@
                 <p>Interested in working together or have a project in mind? Feel free to reach out!</p>
                 
                 <div class="footer-links">
-                    <a href="mailto:your.email@example.com">Email</a>
-                    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                    <a href="mailto:khoale0501@gmail.com">Email</a>
+                    <a href="https://github.com/nicolasletran" target="_blank">GitHub</a>
                     <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
                 </div>
                 
                 <div class="copyright">
-                    © 2024 Your Name. All rights reserved.
+                    © 2024 Khoa Le. All rights reserved.
                 </div>
             </div>
         </div>
@@ -869,32 +885,31 @@
                     navTabs.forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     
-                    const category = this.getAttribute('href').substring(1);
+                    const filter = this.getAttribute('data-filter');
                     
                     // Filter projects
                     projectCards.forEach(card => {
-                        if (category === 'web') {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all') {
+                            card.style.display = 'grid';
+                        } else if (filter === 'web') {
                             // Show web projects (Tien Len and Resume Analyzer)
-                            const isWeb = card.dataset.category === 'web' || 
-                                         card.dataset.category === 'web games' || 
-                                         card.dataset.category === 'web tools';
+                            const isWeb = category.includes('web');
                             card.style.display = isWeb ? 'grid' : 'none';
-                        } else if (category === 'games') {
+                        } else if (filter === 'games') {
                             // Show games (Tien Len and Tic Tac Toe)
-                            const isGame = card.dataset.category === 'games' || 
-                                          card.dataset.category === 'web games';
+                            const isGame = category.includes('games');
                             card.style.display = isGame ? 'grid' : 'none';
-                        } else if (category === 'systems') {
+                        } else if (filter === 'systems') {
                             // Show systems programming
-                            const isSystem = card.dataset.category === 'systems';
+                            const isSystem = category === 'systems';
                             card.style.display = isSystem ? 'grid' : 'none';
-                        } else if (category === 'tools') {
+                        } else if (filter === 'tools') {
                             // Show tools
-                            const isTool = card.dataset.category === 'tools' || 
-                                          card.dataset.category === 'web tools';
+                            const isTool = category.includes('tools');
                             card.style.display = isTool ? 'grid' : 'none';
                         } else {
-                            // Show all
                             card.style.display = 'grid';
                         }
                     });
@@ -933,6 +948,27 @@
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
+            
+            // Update demo links notice based on selection
+            const updateDemoNotice = () => {
+                const activeFilter = document.querySelector('.nav-tab.active').getAttribute('data-filter');
+                const notice = document.querySelector('.demo-notice p');
+                
+                if (activeFilter === 'systems' || activeFilter === 'tools') {
+                    notice.textContent = 'These are CLI applications. Click "View Code" to explore the GitHub repository.';
+                } else if (activeFilter === 'games') {
+                    notice.textContent = 'Click "View Code" to explore the GitHub repository. Games include both CLI and GUI versions.';
+                } else {
+                    notice.textContent = 'Click "View Code" to explore the GitHub repository. Live demos available upon request.';
+                }
+            };
+            
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', updateDemoNotice);
+            });
+            
+            // Initialize notice
+            updateDemoNotice();
         });
     </script>
 </body>

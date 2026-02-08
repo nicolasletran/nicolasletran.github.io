@@ -134,6 +134,26 @@
         li {
             margin-bottom: 8px;
         }
+        .local-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #856404;
+        }
+        .upcoming-features {
+            background: #d1ecf1;
+            border-left: 4px solid #0dcaf0;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            color: #0c5460;
+        }
+        .upcoming-features ul {
+            margin: 10px 0 0 0;
+        }
     </style>
 </head>
 <body>
@@ -144,6 +164,59 @@
 <div class="container">
 
     <h2>🎯 Featured Projects</h2>
+
+    <!-- Tien Len Card Game -->
+    <div class="project">
+        <h3><span class="emoji">🃏</span> Tien Len (Vietnamese Cards) Game</h3>
+        <p><strong>Full-stack Vietnamese card game with AI opponents and web interface</strong></p>
+        
+        <div class="feature-grid">
+            <div class="feature">
+                <strong>🤖 AI Opponents</strong>
+                Three difficulty levels with strategic gameplay
+            </div>
+            <div class="feature">
+                <strong>🌐 Web Interface</strong>
+                Flask-based UI accessible via localhost:5000
+            </div>
+            <div class="feature">
+                <strong>🎯 Game Logic</strong>
+                Complete Tien Len rules implementation
+            </div>
+            <div class="feature">
+                <strong>📊 Game State</strong>
+                Real-time game tracking and statistics
+            </div>
+        </div>
+        
+        <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Web Development</span>
+            <span class="tech-tag">Game AI</span>
+            <span class="tech-tag">Backend</span>
+            <span class="tech-tag">HTML/CSS/JS</span>
+        </div>
+        
+        <p><strong>Current Features:</strong> Complete card game logic • Three AI difficulty levels • Interactive web interface • Real-time game updates • Local multiplayer simulation</p>
+        
+        <div class="local-note">
+            <strong>💡 How to play:</strong> Run the Flask server and access at <code>http://localhost:5000</code> to play against AI opponents
+        </div>
+        
+        <div class="upcoming-features">
+            <strong>🚧 Upcoming Features:</strong>
+            <ul>
+                <li>Multiplayer online mode</li>
+                <li>Public deployment for anyone to play</li>
+                <li>Tournament system</li>
+                <li>Game coin betting system</li>
+                <li>Player profiles and rankings</li>
+            </ul>
+        </div>
+        
+        <a href="#" class="project-link" target="_blank">View Project →</a>
+    </div>
 
     <!-- Tic Tac Toe AI Game -->
     <div class="project">

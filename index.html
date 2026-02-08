@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khoa Le | Portfolio</title>
+    <title>Nicolas Le | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -175,7 +175,7 @@
             margin-bottom: 100px;
         }
 
-        /* Project Card */
+        /* Project Card - Alternating Layout */
         .project-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -184,13 +184,23 @@
             transition: var(--transition);
             border: 1px solid var(--border);
             position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
         }
 
         @media (min-width: 768px) {
             .project-card {
-                display: grid;
-                grid-template-columns: 300px 1fr;
+                grid-template-columns: 350px 1fr;
                 min-height: 320px;
+            }
+            
+            /* Alternate layout for even-numbered cards */
+            .project-card:nth-child(even) .project-image {
+                order: 2;
+            }
+            
+            .project-card:nth-child(even) .project-content {
+                order: 1;
             }
         }
 
@@ -493,11 +503,13 @@
                 <div class="profile-img">
                     <i class="fas fa-code"></i>
                 </div>
-                <h1>Khoa Le</h1>
-                <div class="title">Full-Stack Developer & Software Engineer</div>
+                <h1>Nicolas Le</h1>
+                <div class="title">Computer Science Student | Aspiring Full-Stack Developer</div>
                 <p class="bio">
-                    I build elegant, high-performance applications with clean architecture and exceptional user experiences. 
-                    Passionate about solving complex problems through well-crafted code and innovative solutions.
+                    I'm a CS student at the University of Victoria passionate about building interactive software and exploring AI/ML. 
+                    I love turning ideas into projects — from web apps to terminal-based tools — that are both practical and engaging. 
+                    With tutoring experience in math, I excel at breaking down complex problems into clear, actionable steps. 
+                    Always curious and detail-oriented, I enjoy tackling challenges that combine logic, creativity, and real-world impact.
                 </p>
                 <div class="social-links">
                     <a href="mailto:khoale0501@gmail.com" aria-label="Email">
@@ -535,7 +547,7 @@
         <h2 class="section-title">Featured Projects</h2>
         
         <div class="projects-grid">
-            <!-- Project 1: Tien Len Mien Nam -->
+            <!-- Project 1: Tien Len Mien Nam (Image on LEFT, text on RIGHT) -->
             <div class="project-card" data-category="web games">
                 <div class="project-image">
                     <div class="image-placeholder">
@@ -588,7 +600,7 @@
                 </div>
             </div>
 
-            <!-- Project 2: Smart Resume Analyzer -->
+            <!-- Project 2: Smart Resume Analyzer (Image on RIGHT, text on LEFT) -->
             <div class="project-card" data-category="web tools">
                 <div class="project-image">
                     <div class="image-placeholder" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
@@ -641,7 +653,7 @@
                 </div>
             </div>
 
-            <!-- Project 3: Tic Tac Toe AI -->
+            <!-- Project 3: Tic Tac Toe AI (Image on LEFT, text on RIGHT) -->
             <div class="project-card" data-category="games">
                 <div class="project-image">
                     <div class="image-placeholder" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
@@ -692,7 +704,7 @@
                 </div>
             </div>
 
-            <!-- Project 4: Mini Unix Shell -->
+            <!-- Project 4: Mini Unix Shell (Image on RIGHT, text on LEFT) -->
             <div class="project-card" data-category="systems">
                 <div class="project-image">
                     <div class="image-placeholder" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
@@ -744,7 +756,7 @@
                 </div>
             </div>
 
-            <!-- Project 5: File Manager in C -->
+            <!-- Project 5: File Manager in C (Image on LEFT, text on RIGHT) -->
             <div class="project-card" data-category="systems">
                 <div class="project-image">
                     <div class="image-placeholder" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
@@ -795,7 +807,7 @@
                 </div>
             </div>
 
-            <!-- Project 6: Calories & Expense Tracker -->
+            <!-- Project 6: Calories & Expense Tracker (Image on RIGHT, text on LEFT) -->
             <div class="project-card" data-category="tools">
                 <div class="project-image">
                     <div class="image-placeholder" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
@@ -862,7 +874,7 @@
                 </div>
                 
                 <div class="copyright">
-                    © 2024 Khoa Le. All rights reserved.
+                    © 2024 Nicolas Le. All rights reserved.
                 </div>
             </div>
         </div>

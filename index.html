@@ -10,6 +10,7 @@
             --primary: #2563eb;
             --primary-dark: #1e40af;
             --secondary: #7c3aed;
+            --accent: #10b981;
             --text: #1f2937;
             --text-light: #6b7280;
             --bg: #ffffff;
@@ -117,6 +118,33 @@
             transform: translateY(-3px);
         }
 
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: white;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            border: 2px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .nav-tab:hover,
+        .nav-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
         /* Projects Section */
         .section-title {
             font-size: 2.25rem;
@@ -154,27 +182,14 @@
             box-shadow: var(--card-shadow);
             transition: var(--transition);
             border: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: 1fr;
             position: relative;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 768px) {
             .project-card {
-                grid-template-columns: 400px 1fr;
-                min-height: 360px;
-            }
-            
-            .project-card:nth-child(even) {
-                grid-template-columns: 1fr 400px;
-            }
-            
-            .project-card:nth-child(even) .project-image {
-                order: 2;
-            }
-            
-            .project-card:nth-child(even) .project-content {
-                order: 1;
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                min-height: 320px;
             }
         }
 
@@ -185,13 +200,12 @@
         }
 
         .project-image {
-            height: 240px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 220px;
             position: relative;
             overflow: hidden;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 768px) {
             .project-image {
                 height: 100%;
             }
@@ -203,9 +217,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 36px;
             color: white;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
         .project-image img {
@@ -220,7 +234,7 @@
         }
 
         .project-content {
-            padding: 36px;
+            padding: 32px;
             display: flex;
             flex-direction: column;
         }
@@ -230,7 +244,7 @@
         }
 
         .project-title {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 8px;
             color: var(--text);
@@ -239,29 +253,30 @@
 
         .project-description {
             color: var(--text-light);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 24px;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .project-highlights {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             flex-grow: 1;
         }
 
         .highlight-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text);
+            font-size: 0.95rem;
         }
 
         .highlight-item i {
             color: var(--primary);
-            margin-right: 12px;
+            margin-right: 10px;
             margin-top: 4px;
             flex-shrink: 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .highlight-item span {
@@ -269,7 +284,7 @@
         }
 
         .tools-container {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .tools-title {
@@ -278,21 +293,21 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-light);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .tools {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .tool-tag {
             background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
-            padding: 6px 16px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 500;
             border: 1px solid rgba(37, 99, 235, 0.2);
             transition: var(--transition);
@@ -305,21 +320,19 @@
 
         .project-links {
             display: flex;
-            gap: 16px;
+            gap: 12px;
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 12px;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: var(--transition);
-            flex: 1;
-            justify-content: center;
         }
 
         .project-link.demo {
@@ -412,15 +425,20 @@
             }
             
             .project-title {
-                font-size: 1.5rem;
+                font-size: 1.35rem;
             }
             
             .section-title {
                 font-size: 1.875rem;
             }
             
-            .project-links {
-                flex-direction: column;
+            .nav-tabs {
+                gap: 10px;
+            }
+            
+            .nav-tab {
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
         }
 
@@ -450,6 +468,10 @@
                 height: 44px;
                 font-size: 1.125rem;
             }
+            
+            .project-links {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -464,7 +486,7 @@
                 <h1>Your Name</h1>
                 <div class="title">Full-Stack Developer & Software Engineer</div>
                 <p class="bio">
-                    I build elegant, high-performance web applications with clean architecture and exceptional user experiences. 
+                    I build elegant, high-performance applications with clean architecture and exceptional user experiences. 
                     Passionate about solving complex problems through well-crafted code and innovative solutions.
                 </p>
                 <div class="social-links">
@@ -482,105 +504,113 @@
         </div>
     </header>
 
+    <!-- Navigation -->
+    <div class="container">
+        <div class="nav-tabs">
+            <a href="#web" class="nav-tab active">Web Projects</a>
+            <a href="#games" class="nav-tab">Games & AI</a>
+            <a href="#systems" class="nav-tab">Systems Programming</a>
+            <a href="#tools" class="nav-tab">Tools & Utilities</a>
+        </div>
+    </div>
+
     <!-- Projects Section -->
     <div class="container">
         <h2 class="section-title">Featured Projects</h2>
         
         <div class="projects-grid">
             <!-- Project 1: Tien Len Mien Nam -->
-            <div class="project-card">
+            <div class="project-card" data-category="web games">
                 <div class="project-image">
                     <div class="image-placeholder">
-                        🎴 Tien Len
+                        🎴
                     </div>
                 </div>
                 <div class="project-content">
                     <div class="project-header">
                         <h3 class="project-title">Tien Len Mien Nam</h3>
                         <p class="project-description">
-                            A full-stack web implementation of the traditional Vietnamese card game with AI opponents and real-time gameplay.
+                            Full-stack web implementation of Vietnamese card game with AI opponents and real-time gameplay.
                         </p>
                     </div>
                     
                     <div class="project-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Built complete game engine implementing complex Vietnamese card rules including 3♠ requirement and automatic wins</span>
+                            <span>Complete game engine implementing complex Vietnamese card rules</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Interactive HTML5 Canvas frontend with smooth animations, card hover effects, and responsive design</span>
+                            <span>Interactive HTML5 Canvas frontend with smooth animations</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Flask backend with REST APIs, intelligent bot AI, session management, and comprehensive error handling</span>
+                            <span>Flask backend with REST APIs, bot AI, and session management</span>
                         </div>
                     </div>
                     
                     <div class="tools-container">
-                        <div class="tools-title">Technologies Used</div>
+                        <div class="tools-title">Technologies</div>
                         <div class="tools">
                             <span class="tool-tag">Python</span>
                             <span class="tool-tag">Flask</span>
                             <span class="tool-tag">JavaScript</span>
                             <span class="tool-tag">HTML5 Canvas</span>
-                            <span class="tool-tag">CSS3</span>
                             <span class="tool-tag">REST API</span>
                             <span class="tool-tag">Game AI</span>
-                            <span class="tool-tag">Session Management</span>
                         </div>
                     </div>
                     
                     <div class="project-links">
-                        <a href="YOUR_DEMO_LINK_HERE" class="project-link demo" target="_blank" rel="noopener">
+                        <a href="YOUR_DEMO_LINK" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
-                        <a href="YOUR_GITHUB_LINK_HERE" class="project-link code" target="_blank" rel="noopener">
+                        <a href="YOUR_GITHUB_LINK" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="project-card">
+            <!-- Project 2: Smart Resume Analyzer -->
+            <div class="project-card" data-category="web tools">
                 <div class="project-image">
                     <div class="image-placeholder" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                        📱 Project 2
+                        📄
                     </div>
                 </div>
                 <div class="project-content">
                     <div class="project-header">
-                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <h3 class="project-title">Smart Resume Analyzer</h3>
                         <p class="project-description">
-                            A full-featured e-commerce platform with user authentication, payment processing, and admin dashboard.
+                            Web-based tool that analyzes resumes and scores them for skills, experience, and relevance.
                         </p>
                     </div>
                     
                     <div class="project-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Built complete shopping cart, checkout, and payment integration with Stripe API</span>
+                            <span>Extracted and parsed resume content (PDF/DOCX) using Python libraries</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Implemented user authentication, product management, and order tracking system</span>
+                            <span>Implemented keyword matching, skill scoring, and automated ranking</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Created responsive admin dashboard with analytics and inventory management</span>
+                            <span>Interactive web interface for uploading resumes and displaying results</span>
                         </div>
                     </div>
                     
                     <div class="tools-container">
-                        <div class="tools-title">Technologies Used</div>
+                        <div class="tools-title">Technologies</div>
                         <div class="tools">
-                            <span class="tool-tag">React</span>
-                            <span class="tool-tag">Node.js</span>
-                            <span class="tool-tag">Express</span>
-                            <span class="tool-tag">MongoDB</span>
-                            <span class="tool-tag">Stripe API</span>
-                            <span class="tool-tag">JWT Auth</span>
+                            <span class="tool-tag">Python</span>
+                            <span class="tool-tag">Flask</span>
+                            <span class="tool-tag">PDF/DOCX Parsing</span>
+                            <span class="tool-tag">Text Analysis</span>
+                            <span class="tool-tag">JavaScript</span>
+                            <span class="tool-tag">HTML/CSS</span>
                         </div>
                     </div>
                     
@@ -595,51 +625,203 @@
                 </div>
             </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
+            <!-- Project 3: Tic Tac Toe AI -->
+            <div class="project-card" data-category="games">
                 <div class="project-image">
                     <div class="image-placeholder" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                        📊 Project 3
+                        ⭕❌
                     </div>
                 </div>
                 <div class="project-content">
                     <div class="project-header">
-                        <h3 class="project-title">Real-time Analytics Dashboard</h3>
+                        <h3 class="project-title">Tic Tac Toe AI Game</h3>
                         <p class="project-description">
-                            A data visualization dashboard for monitoring real-time metrics with interactive charts and alerts.
+                            Intelligent Tic Tac Toe game featuring unbeatable AI using the minimax algorithm.
                         </p>
                     </div>
                     
                     <div class="project-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Developed real-time data processing pipeline with WebSocket connections</span>
+                            <span>Implemented AI opponent with minimax algorithm for perfect play</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Created interactive charts and data visualizations using D3.js and Chart.js</span>
+                            <span>Designed interactive console/GUI for human vs AI matches</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check"></i>
-                            <span>Built custom alert system with email notifications and performance monitoring</span>
+                            <span>Added game state validation, move suggestions, and win detection</span>
                         </div>
                     </div>
                     
                     <div class="tools-container">
-                        <div class="tools-title">Technologies Used</div>
+                        <div class="tools-title">Technologies</div>
                         <div class="tools">
-                            <span class="tool-tag">Vue.js</span>
-                            <span class="tool-tag">WebSocket</span>
-                            <span class="tool-tag">D3.js</span>
-                            <span class="tool-tag">PostgreSQL</span>
-                            <span class="tool-tag">Redis</span>
-                            <span class="tool-tag">Docker</span>
+                            <span class="tool-tag">Python</span>
+                            <span class="tool-tag">Minimax Algorithm</span>
+                            <span class="tool-tag">OOP</span>
+                            <span class="tool-tag">CLI/GUI</span>
                         </div>
                     </div>
                     
                     <div class="project-links">
                         <a href="#" class="project-link demo">
                             <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="#" class="project-link code">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Mini Unix Shell -->
+            <div class="project-card" data-category="systems">
+                <div class="project-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        💻
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Mini Unix Shell</h3>
+                        <p class="project-description">
+                            Simplified Unix shell supporting command execution, background processes, and pipelines.
+                        </p>
+                    </div>
+                    
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Implemented command parsing, directory navigation, and job execution</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Supported pipes (|) and I/O redirection</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Added custom shell prompt and job tracking</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-container">
+                        <div class="tools-title">Technologies</div>
+                        <div class="tools">
+                            <span class="tool-tag">C</span>
+                            <span class="tool-tag">POSIX</span>
+                            <span class="tool-tag">Unix System Calls</span>
+                            <span class="tool-tag">Piping</span>
+                            <span class="tool-tag">Process Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link demo">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link code">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: File Manager in C -->
+            <div class="project-card" data-category="systems">
+                <div class="project-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                        📁
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">File Manager in C</h3>
+                        <p class="project-description">
+                            Command-line file manager for Unix systems with navigation, file operations, and search.
+                        </p>
+                    </div>
+                    
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Implemented directory navigation, file creation, deletion, and moving</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Added file search and batch operations</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Designed user-friendly CLI interface with error handling</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-container">
+                        <div class="tools-title">Technologies</div>
+                        <div class="tools">
+                            <span class="tool-tag">C</span>
+                            <span class="tool-tag">Unix System Calls</span>
+                            <span class="tool-tag">File I/O</span>
+                            <span class="tool-tag">CLI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link demo">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link code">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Calories & Expense Tracker -->
+            <div class="project-card" data-category="tools">
+                <div class="project-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        📊
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Calories & Expense Tracker</h3>
+                        <p class="project-description">
+                            Terminal-based app to track daily calories, protein intake, and expenses with automated alerts.
+                        </p>
+                    </div>
+                    
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Logs meals, calories, protein, and expenses with visual summaries</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Alerts user if daily protein intake falls below target</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Future upgrade planned: web-based dashboard for interactive tracking</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-container">
+                        <div class="tools-title">Technologies</div>
+                        <div class="tools">
+                            <span class="tool-tag">Python</span>
+                            <span class="tool-tag">CLI</span>
+                            <span class="tool-tag">ASCII Charts</span>
+                            <span class="tool-tag">File/JSON Storage</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link demo">
+                            <i class="fas fa-external-link-alt"></i> View Demo
                         </a>
                         <a href="#" class="project-link code">
                             <i class="fab fa-github"></i> View Code
@@ -671,10 +853,55 @@
     </footer>
 
     <script>
-        // Smooth hover effects
+        // Filter projects by category
         document.addEventListener('DOMContentLoaded', function() {
+            const navTabs = document.querySelectorAll('.nav-tab');
             const projectCards = document.querySelectorAll('.project-card');
             
+            // Show all projects initially
+            projectCards.forEach(card => card.style.display = 'grid');
+            
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active tab
+                    navTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('href').substring(1);
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        if (category === 'web') {
+                            // Show web projects (Tien Len and Resume Analyzer)
+                            const isWeb = card.dataset.category === 'web' || 
+                                         card.dataset.category === 'web games' || 
+                                         card.dataset.category === 'web tools';
+                            card.style.display = isWeb ? 'grid' : 'none';
+                        } else if (category === 'games') {
+                            // Show games (Tien Len and Tic Tac Toe)
+                            const isGame = card.dataset.category === 'games' || 
+                                          card.dataset.category === 'web games';
+                            card.style.display = isGame ? 'grid' : 'none';
+                        } else if (category === 'systems') {
+                            // Show systems programming
+                            const isSystem = card.dataset.category === 'systems';
+                            card.style.display = isSystem ? 'grid' : 'none';
+                        } else if (category === 'tools') {
+                            // Show tools
+                            const isTool = card.dataset.category === 'tools' || 
+                                          card.dataset.category === 'web tools';
+                            card.style.display = isTool ? 'grid' : 'none';
+                        } else {
+                            // Show all
+                            card.style.display = 'grid';
+                        }
+                    });
+                });
+            });
+            
+            // Add hover effects
             projectCards.forEach(card => {
                 card.addEventListener('mouseenter', () => {
                     card.style.transform = 'translateY(-8px)';

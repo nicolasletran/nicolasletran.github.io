@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas Le | Portfolio</title>
+    <meta name="description" content="Nicolas Le - Computer Science Student and Full-Stack Developer. Portfolio showcasing web development, AI/ML, and systems programming projects.">
+    <meta name="keywords" content="portfolio, developer, computer science, web development, AI, Python, Flask">
+    <meta name="author" content="Nicolas Le">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -145,6 +148,69 @@
             background: var(--primary);
             color: white;
             border-color: var(--primary);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            margin-bottom: 80px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-item {
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            background: rgba(37, 99, 235, 0.12);
+            transform: translateY(-2px);
         }
 
         /* Projects Section */
@@ -387,6 +453,97 @@
             font-size: 0.9rem;
         }
 
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--bg);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.1);
+            color: #065f46;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #991b1b;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -466,6 +623,15 @@
                 padding: 10px 20px;
                 font-size: 0.9rem;
             }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+                margin: 30px auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -538,7 +704,7 @@
                 <h1>Nicolas Le</h1>
                 <div class="title">Computer Science Student | Aspiring Full-Stack Developer</div>
                 <p class="bio">
-                    I’m a CS student at the University of Victoria passionate about building practical software and AI/ML projects. 
+                    I'm a CS student at the University of Victoria passionate about building practical software and AI/ML projects. 
                     I enjoy turning ideas into interactive apps and tools, both web-based and terminal-based. 
                     Detail-oriented and curious, I thrive on solving challenging problems with creative, real-world solutions.
                 </p>
@@ -549,7 +715,7 @@
                     <a href="https://github.com/nicolasletran" aria-label="GitHub" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/yourusername" aria-label="LinkedIn" target="_blank">
+                    <a href="https://linkedin.com/in/nicolasle" aria-label="LinkedIn" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
@@ -568,9 +734,63 @@
         </div>
     </div>
 
+    <!-- Skills Section -->
+    <div class="container skills-section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">HTML/CSS</span>
+                    <span class="skill-item">SQL</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Flask</span>
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Pandas</span>
+                    <span class="skill-item">NumPy</span>
+                    <span class="skill-item">Bootstrap</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">Linux/Unix</span>
+                    <span class="skill-item">REST APIs</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">PostgreSQL</span>
+                    <span class="skill-item">MongoDB</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> Concepts & Methodologies</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Object-Oriented Design</span>
+                    <span class="skill-item">Data Structures</span>
+                    <span class="skill-item">Algorithms</span>
+                    <span class="skill-item">AI/ML Basics</span>
+                    <span class="skill-item">System Design</span>
+                    <span class="skill-item">Agile/Scrum</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Demo Links Notice -->
     <div class="container demo-notice">
-        <p>Click "View Code" to explore the GitHub repository for each project. Live demos available upon request.</p>
+        <p>Click "Live Demo" to view project demonstrations. Click "View Code" to explore the GitHub repository.</p>
     </div>
 
     <!-- Projects Section -->
@@ -620,7 +840,7 @@
                     </div>
                     
                     <div class="project-links">
-                        <a href="#" class="project-link demo" target="_blank">
+                        <a href="https://github.com/nicolasletran/Tien_Len_Card_Game" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                         <a href="https://github.com/nicolasletran/Tien_Len_Card_Game" class="project-link code" target="_blank">
@@ -672,7 +892,7 @@
                     </div>
                     
                     <div class="project-links">
-                        <a href="#" class="project-link demo">
+                        <a href="https://github.com/nicolasletran/Smart-Resume-Analyzer/tree/main/demo" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                         <a href="https://github.com/nicolasletran/Smart-Resume-Analyzer" class="project-link code" target="_blank">
@@ -722,7 +942,7 @@
                     </div>
                     
                     <div class="project-links">
-                        <a href="#" class="project-link demo">
+                        <a href="https://github.com/nicolasletran/tic_tac_toe_ai/tree/main/demo" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                         <a href="https://github.com/nicolasletran/tic_tac_toe_ai" class="project-link code" target="_blank">
@@ -773,7 +993,7 @@
                     </div>
                     
                     <div class="project-links">
-                        <a href="#" class="project-link demo">
+                        <a href="https://github.com/nicolasletran/Mini-Unix-Shell" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> View Demo
                         </a>
                         <a href="https://github.com/nicolasletran/Mini-Unix-Shell" class="project-link code" target="_blank">
@@ -823,7 +1043,7 @@
                     </div>
                     
                     <div class="project-links">
-                        <a href="#" class="project-link demo">
+                        <a href="https://github.com/nicolasletran/File-Manager-C" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> View Demo
                         </a>
                         <a href="https://github.com/nicolasletran/File-Manager-C" class="project-link code" target="_blank">
@@ -873,7 +1093,7 @@
                     </div>
                     
                     <div class="project-links">
-                        <a href="#" class="project-link demo">
+                        <a href="https://github.com/nicolasletran/Calories-Expense-Tracker" class="project-link demo" target="_blank">
                             <i class="fas fa-external-link-alt"></i> View Demo
                         </a>
                         <a href="https://github.com/nicolasletran/Calories-Expense-Tracker" class="project-link code" target="_blank">
@@ -885,17 +1105,51 @@
         </div>
     </div>
 
+    <!-- Contact Form -->
+    <div class="container">
+        <div class="contact-form">
+            <h3>Get In Touch</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-title">Get In Touch</div>
-                <p>Interested in working together or have a project in mind? Feel free to reach out!</p>
+                <div class="footer-title">Connect With Me</div>
+                <p>Feel free to reach out for collaborations, opportunities, or just to say hi!</p>
                 
                 <div class="footer-links">
                     <a href="mailto:khoale0501@gmail.com">Email</a>
                     <a href="https://github.com/nicolasletran" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+                    <a href="https://linkedin.com/in/nicolasle" target="_blank">LinkedIn</a>
                 </div>
                 
                 <div class="copyright">
@@ -916,6 +1170,8 @@
             const navTabs = document.querySelectorAll('.nav-tab');
             const projectCards = document.querySelectorAll('.project-card');
             const backToTop = document.getElementById('backToTop');
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
             
             // Show all projects initially
             projectCards.forEach(card => card.style.display = 'grid');
@@ -953,8 +1209,22 @@
                             card.style.display = 'grid';
                         }
                     });
+                    
+                    updateProjectCount(filter);
+                    updateDemoNotice(filter);
                 });
             });
+            
+            // Update project count
+            function updateProjectCount(filter) {
+                let count;
+                if (filter === 'all') {
+                    count = projectCards.length;
+                } else {
+                    count = document.querySelectorAll(`.project-card${filter !== 'all' ? `[data-category*="${filter}"]` : ''}`).length;
+                }
+                document.querySelector('.section-title').innerHTML = `Featured Projects <span style="font-size: 1rem; color: var(--text-light);">(${count})</span>`;
+            }
             
             // Add hover effects
             projectCards.forEach(card => {
@@ -971,7 +1241,10 @@
             document.querySelectorAll('.project-image img').forEach(img => {
                 img.addEventListener('error', function() {
                     this.style.display = 'none';
-                    this.nextElementSibling.style.display = 'flex';
+                    const placeholder = this.nextElementSibling;
+                    if (placeholder && placeholder.classList.contains('image-placeholder')) {
+                        placeholder.style.display = 'flex';
+                    }
                 });
             });
             
@@ -996,21 +1269,51 @@
             });
             
             // Update demo notice
-            const updateDemoNotice = () => {
-                const activeFilter = document.querySelector('.nav-tab.active').getAttribute('data-filter');
+            function updateDemoNotice(filter) {
                 const notice = document.querySelector('.demo-notice p');
                 
-                if (activeFilter === 'systems' || activeFilter === 'tools') {
-                    notice.textContent = 'These are CLI applications. Click "View Code" to explore the GitHub repository.';
-                } else if (activeFilter === 'games') {
-                    notice.textContent = 'Click "View Code" to explore the GitHub repository. Games include both CLI and GUI versions.';
+                if (filter === 'systems' || filter === 'tools') {
+                    notice.textContent = 'These are CLI applications. Click "View Demo" to see demonstration videos/screenshots.';
+                } else if (filter === 'games') {
+                    notice.textContent = 'Click "Live Demo" to view project demonstrations. Click "View Code" to explore the GitHub repository.';
+                } else if (filter === 'web') {
+                    notice.textContent = 'Click "Live Demo" to view web application demonstrations. Click "View Code" to explore the GitHub repository.';
                 } else {
-                    notice.textContent = 'Click "View Code" to explore the GitHub repository. Live demos available upon request.';
+                    notice.textContent = 'Click "Live Demo" to view project demonstrations. Click "View Code" to explore the GitHub repository.';
                 }
-            };
+            }
             
-            navTabs.forEach(tab => {
-                tab.addEventListener('click', updateDemoNotice);
+            // Contact form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalBtnText = submitBtn.innerHTML;
+                
+                // Disable button and show loading
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission (in a real application, you would send to a server)
+                setTimeout(() => {
+                    // Success message
+                    formMessage.textContent = 'Thank you! Your message has been sent. I\'ll get back to you soon.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                }, 1500);
             });
             
             // Back to top button
@@ -1022,8 +1325,9 @@
                 backToTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
             });
             
-            // Initialize notice
-            updateDemoNotice();
+            // Initialize
+            updateProjectCount('all');
+            updateDemoNotice('all');
         });
     </script>
 </body>

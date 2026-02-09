@@ -24,6 +24,20 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Dark mode variables */
+        [data-theme="dark"] {
+            --primary: #60a5fa;
+            --primary-dark: #3b82f6;
+            --secondary: #a78bfa;
+            --accent: #34d399;
+            --text: #f3f4f6;
+            --text-light: #d1d5db;
+            --bg: #111827;
+            --card-bg: #1f2937;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --border: #374151;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -33,9 +47,10 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--text);
-            background-color: #f9fafb;
+            background-color: var(--bg);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -52,6 +67,50 @@
             color: white;
             margin-bottom: 60px;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        [data-theme="dark"] header {
+            background: linear-gradient(135deg, #030712 0%, #111827 100%);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .theme-toggle .fa-sun {
+            display: none;
+        }
+
+        [data-theme="dark"] .theme-toggle .fa-moon {
+            display: none;
+        }
+
+        [data-theme="dark"] .theme-toggle .fa-sun {
+            display: block;
         }
 
         .profile {
@@ -154,7 +213,7 @@
 
         .nav-tab {
             padding: 12px 24px;
-            background: white;
+            background: var(--card-bg);
             border-radius: 50px;
             font-weight: 600;
             color: var(--text);
@@ -234,6 +293,12 @@
             transform: translateY(-2px);
         }
 
+        [data-theme="dark"] .skill-item {
+            background: rgba(96, 165, 250, 0.15);
+            color: #93c5fd;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
         /* Projects Section */
         .section-title {
             font-size: 2.25rem;
@@ -296,6 +361,10 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
             border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        [data-theme="dark"] .project-card:hover {
+            border-color: rgba(96, 165, 250, 0.3);
         }
 
         .project-image {
@@ -422,6 +491,12 @@
             transform: translateY(-2px);
         }
 
+        [data-theme="dark"] .tool-tag {
+            background: rgba(96, 165, 250, 0.15);
+            color: #93c5fd;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
         .project-links {
             display: flex;
             gap: 12px;
@@ -445,6 +520,10 @@
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
+        [data-theme="dark"] .project-link.demo {
+            box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+        }
+
         .project-link.code {
             background: var(--card-bg);
             color: var(--text);
@@ -460,9 +539,17 @@
             background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
         }
 
+        [data-theme="dark"] .project-link.demo:hover {
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.4);
+        }
+
         .project-link.code:hover {
             border-color: var(--primary);
             background: rgba(37, 99, 235, 0.02);
+        }
+
+        [data-theme="dark"] .project-link.code:hover {
+            background: rgba(96, 165, 250, 0.05);
         }
 
         /* Demo Links Notice */
@@ -513,6 +600,7 @@
             font-size: 1rem;
             transition: var(--transition);
             background: var(--bg);
+            color: var(--text);
         }
 
         .form-group input:focus,
@@ -520,6 +608,11 @@
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        [data-theme="dark"] .form-group input:focus,
+        [data-theme="dark"] .form-group textarea:focus {
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
         }
 
         .submit-btn {
@@ -545,6 +638,10 @@
             box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
         }
 
+        [data-theme="dark"] .submit-btn:hover {
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.3);
+        }
+
         .form-message {
             margin-top: 20px;
             padding: 12px;
@@ -563,6 +660,18 @@
             background: rgba(239, 68, 68, 0.1);
             color: #991b1b;
             border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        [data-theme="dark"] .form-message.success {
+            background: rgba(52, 211, 153, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        [data-theme="dark"] .form-message.error {
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.3);
         }
 
         /* Footer */
@@ -656,6 +765,14 @@
                 padding: 30px 20px;
                 margin: 30px auto;
             }
+            
+            .theme-toggle {
+                top: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -746,6 +863,12 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Dark Mode Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
     </header>
 
     <!-- Navigation -->
@@ -1190,6 +1313,53 @@
     </button>
 
     <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Check for saved theme or prefered scheme
+        const currentTheme = localStorage.getItem('theme') || 
+            (prefersDarkScheme.matches ? 'dark' : 'light');
+        
+        // Set initial theme
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        // Update toggle icon based on theme
+        if (currentTheme === 'dark') {
+            themeToggle.querySelector('.fa-moon').style.display = 'none';
+            themeToggle.querySelector('.fa-sun').style.display = 'block';
+        }
+        
+        // Toggle theme function
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            // Update theme attribute
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            // Save preference to localStorage
+            localStorage.setItem('theme', newTheme);
+            
+            // Update toggle icon
+            if (newTheme === 'dark') {
+                themeToggle.querySelector('.fa-moon').style.display = 'none';
+                themeToggle.querySelector('.fa-sun').style.display = 'block';
+            } else {
+                themeToggle.querySelector('.fa-moon').style.display = 'block';
+                themeToggle.querySelector('.fa-sun').style.display = 'none';
+            }
+        });
+        
+        // Listen for system theme changes
+        prefersDarkScheme.addEventListener('change', (e) => {
+            // Only update if user hasn't manually set a preference
+            if (!localStorage.getItem('theme')) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+            }
+        });
+
         // Filter projects by category
         document.addEventListener('DOMContentLoaded', function() {
             const navTabs = document.querySelectorAll('.nav-tab');

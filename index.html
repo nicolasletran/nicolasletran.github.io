@@ -299,6 +299,92 @@
             border: 1px solid rgba(96, 165, 250, 0.3);
         }
 
+        /* Why Choose Me Section */
+        .why-choose-section {
+            margin-bottom: 80px;
+        }
+
+        .why-choose-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .why-choose-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .reason-card {
+            background: rgba(37, 99, 235, 0.03);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        [data-theme="dark"] .reason-card {
+            background: rgba(96, 165, 250, 0.05);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+
+        .reason-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .reason-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .reason-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .reason-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .reason-number {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
         /* Projects Section */
         .section-title {
             font-size: 2.25rem;
@@ -773,6 +859,19 @@
                 height: 44px;
                 font-size: 1.1rem;
             }
+            
+            .why-choose-content {
+                padding: 30px 20px;
+            }
+            
+            .reasons-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .reason-card {
+                padding: 24px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -857,7 +956,7 @@
                     <a href="https://github.com/nicolasletran" aria-label="GitHub" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/nicolasle" aria-label="LinkedIn" target="_blank">
+                    <a href="https://www.linkedin.com/in/l%C3%AA-tr%E1%BA%A7n-b%E1%BA%A3o-khoa-0b26632aa/" aria-label="LinkedIn" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
@@ -931,6 +1030,109 @@
                     <span class="skill-item">AI/ML Basics</span>
                     <span class="skill-item">System Design</span>
                     <span class="skill-item">Agile/Scrum</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Me Section -->
+    <div class="container why-choose-section">
+        <h2 class="section-title">Why Choose Me?</h2>
+        <div class="why-choose-container">
+            <div class="why-choose-content">
+                <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: var(--text-light);">
+                    As a dedicated Computer Science student and developer, I bring a unique combination of technical skills, 
+                    problem-solving abilities, and passion for innovation. Here's what sets me apart:
+                </p>
+                
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-number">1</div>
+                        <div class="reason-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="reason-title">Creative Problem Solver</h3>
+                        <p class="reason-description">
+                            I excel at tackling complex problems with innovative solutions. Whether it's building a game AI 
+                            with minimax algorithm or creating a Unix shell from scratch, I approach challenges with both 
+                            analytical thinking and creative flair.
+                        </p>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-number">2</div>
+                        <div class="reason-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="reason-title">Rapid Learner & Adaptable</h3>
+                        <p class="reason-description">
+                            My diverse project portfolio demonstrates my ability to quickly master new technologies. 
+                            From web development with Flask to systems programming in C, I continuously expand my skill 
+                            set and adapt to new challenges efficiently.
+                        </p>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-number">3</div>
+                        <div class="reason-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3 class="reason-title">Full-Stack Versatility</h3>
+                        <p class="reason-description">
+                            I bridge the gap between frontend and backend development, with experience spanning from 
+                            interactive web interfaces to robust server-side logic and database management. This holistic 
+                            understanding enables me to build complete, scalable solutions.
+                        </p>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-number">4</div>
+                        <div class="reason-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3 class="reason-title">Project Execution & Ownership</h3>
+                        <p class="reason-description">
+                            Each project in my portfolio represents complete end-to-end development – from concept and design 
+                            to implementation and deployment. I take ownership of my work and ensure attention to detail in 
+                            every aspect.
+                        </p>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-number">5</div>
+                        <div class="reason-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="reason-title">Strong Collaboration Skills</h3>
+                        <p class="reason-description">
+                            Through academic projects and personal collaborations, I've developed excellent communication 
+                            and teamwork abilities. I thrive in environments where knowledge is shared and ideas are 
+                            collaboratively refined.
+                        </p>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-number">6</div>
+                        <div class="reason-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="reason-title">Passion for Practical Applications</h3>
+                        <p class="reason-description">
+                            My projects aren't just academic exercises – they're practical tools and applications. From 
+                            resume analyzers to calorie trackers, I build software that solves real-world problems and 
+                            creates tangible value.
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(37, 99, 235, 0.03); border-radius: 12px; border: 1px solid rgba(37, 99, 235, 0.1);">
+                    <p style="font-weight: 600; color: var(--text); margin-bottom: 10px;">
+                        Ready to bring value to your team
+                    </p>
+                    <p style="color: var(--text-light); font-size: 0.95rem;">
+                        I'm not just looking for a job – I'm seeking opportunities to contribute, grow, and make meaningful 
+                        impact through technology. Let's build something amazing together.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1297,7 +1499,7 @@
                 <div class="footer-links">
                     <a href="mailto:khoale0501@gmail.com">Email</a>
                     <a href="https://github.com/nicolasletran" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/nicolasle" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/l%C3%AA-tr%E1%BA%A7n-b%E1%BA%A3o-khoa-0b26632aa/" target="_blank">LinkedIn</a>
                 </div>
                 
                 <div class="copyright">
@@ -1421,10 +1623,22 @@
                 document.querySelector('.section-title').innerHTML = `Featured Projects <span style="font-size: 1rem; color: var(--text-light);">(${count})</span>`;
             }
             
-            // Add hover effects
+            // Add hover effects to project cards
             projectCards.forEach(card => {
                 card.addEventListener('mouseenter', () => {
                     card.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add hover effects to reason cards
+            const reasonCards = document.querySelectorAll('.reason-card');
+            reasonCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px)';
                 });
                 
                 card.addEventListener('mouseleave', () => {
@@ -1462,6 +1676,14 @@
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+            
+            // Animate reason cards
+            reasonCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
                 observer.observe(card);
             });
             

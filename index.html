@@ -931,6 +931,35 @@
             background: var(--primary-dark);
             transform: translateY(-3px);
         }
+
+        /* Custom styles for Minecraft mod card */
+        .project-card .project-link.code {
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .project-card .project-link.code:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--primary);
+        }
+        
+        [data-theme="dark"] .project-card .project-link.code:hover {
+            background: rgba(96, 165, 250, 0.1);
+        }
+        
+        @media (max-width: 480px) {
+            .project-card .project-link.code {
+                min-width: 100%;
+            }
+        }
+        
+        .project-highlights .highlight-item {
+            transition: var(--transition);
+        }
+        
+        .project-highlights .highlight-item:hover {
+            transform: translateX(5px);
+        }
     </style>
 </head>
 <body>
@@ -1452,6 +1481,85 @@
                         </a>
                         <a href="https://github.com/nicolasletran/Calories-Expense-Tracker" class="project-link code" target="_blank">
                             <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7: Minecraft Game Mods (Block Game + Death Challenge) -->
+            <div class="project-card" data-category="games tools">
+                <div class="project-image">
+                    <img src="images/minecraft mod.jpg" alt="Minecraft Game Mods - Block Game and Death Challenge" loading="lazy">
+                    <div class="image-placeholder">🎮</div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Minecraft Game Mods</h3>
+                        <p class="project-description">
+                            <strong>Block Game + Death Challenge</strong>
+                        </p>
+                        <p class="project-description" style="margin-top: 8px; font-style: italic;">
+                            Fabric 1.21 | Java 21 | Server-Side Architecture
+                        </p>
+                    </div>
+                    
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Competitive multiplayer minigame suite built as a Fabric mod for Minecraft 1.21</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check"></i>
+                            <span>Transforms vanilla survival mechanics into structured, round-based PvP challenges</span>
+                        </div>
+                        
+                        <div style="margin: 15px 0 10px; padding-left: 25px;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <span style="background: var(--primary); width: 8px; height: 8px; border-radius: 50%;"></span>
+                                <span><strong>🧱 Block Game</strong> — Timed block identification race</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="background: var(--primary); width: 8px; height: 8px; border-radius: 50%;"></span>
+                                <span><strong>💀 Death Challenge</strong> — Controlled-death competitive survival challenge</span>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item" style="margin-top: 10px;">
+                            <i class="fas fa-check"></i>
+                            <span>Designed for multiplayer servers, content creators, and live events</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-container">
+                        <div class="tools-title">Technologies</div>
+                        <div class="tools">
+                            <span class="tool-tag">Java 21</span>
+                            <span class="tool-tag">Fabric 1.21</span>
+                            <span class="tool-tag">Minecraft Modding</span>
+                            <span class="tool-tag">Server-Side</span>
+                            <span class="tool-tag">Multiplayer</span>
+                            <span class="tool-tag">Game Design</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <div class="tools-title" style="margin-bottom: 8px;">Repository Links</div>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <a href="https://github.com/nicolasletran/block-shuffle-game-minecraft" class="project-link code" target="_blank" style="flex: 1; min-width: 140px;">
+                                <i class="fab fa-github"></i> Block Game Code
+                            </a>
+                            <a href="https://github.com/nicolasletran/death-shuffle-game-mod-minecraft" class="project-link code" target="_blank" style="flex: 1; min-width: 140px;">
+                                <i class="fab fa-github"></i> Death Challenge Code
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link demo" style="opacity: 0.6; pointer-events: none;" onclick="return false;">
+                            <i class="fas fa-external-link-alt"></i> Demo (Server-Side)
+                        </a>
+                        <a href="https://github.com/nicolasletran?tab=repositories&q=minecraft" class="project-link code" target="_blank">
+                            <i class="fab fa-github"></i> View All Mods
                         </a>
                     </div>
                 </div>
